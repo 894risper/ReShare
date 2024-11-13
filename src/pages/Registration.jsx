@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
 const {register,handleSubmit,formState,reset}=useForm();
+const navigate = useNavigate();
 
 useEffect(()=>{
     reset ({username:"",email:"",password:""});
@@ -15,11 +16,16 @@ const handleFormSubmit=()=>{
 }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit(handleFormSubmit)} >
-<div>
+    <div className='flex flex-row h-screen bg-blue-100 md:flex-row' >
+<img src="src\assets\splash.png" alt="" className='h-screen ' />
+<div className='justify-center  flex items-center h-screen flex-col ml-96  '>
+    <h1 className='font-semibold text-xl'>Registration</h1>
+
+        <form onSubmit={handleSubmit(handleFormSubmit)} className='block border border-gray-500 rounded-md p-4  flex-col  max-h-full w-72 shadow-md bg-white ' >
+<div className='flex flex-col'>
 <label htmlFor="username">Username</label>
-<input type="text"
+<input  className='border border-gray-500 px-1 py-1 rounded-md mt-2 mb-2'
+type="text"
 placeholder='username'
 
 {...register("username" ,{
@@ -32,17 +38,18 @@ pattern:{
 })}
 />
  {formState.errors.username &&(
-<p>
+<p className='text-red-600'>
    {formState.errors.username.message} 
 </p>
 
 )}
 
 </div>
-<div>
+<div className='flex flex-col'>
 
     <label htmlFor="email">Email</label>
-    <input type="email" 
+    <input className='border border-gray-500 px-1 py-1 rounded-md mt-2 mb-2'
+     type="email" 
     placeholder='email'
     {...register("email",{
         required:"the emaiil is required",
@@ -54,14 +61,15 @@ pattern:{
     />
     {formState.errors.email &&(
 
-       <p>
+       <p className='text-red-600'>
         {formState.errors.email.message}
        </p> 
     ) }
 </div>
-<div>
+<div className='flex flex-col'>
     <label htmlFor="password">Password</label>
-    <input type="password"
+    <input className='border border-gray-500 px-1 py-1 rounded-md mt-2 mb-2'
+    type="password"
     placeholder='password'
     {...register("password",{
         required:"the password is required",
@@ -72,16 +80,26 @@ pattern:{
     })}
     />
     {formState.errors.password &&(
-        <p>
+        <p className='text-red-600'>
             {formState.errors.password.message}
         </p>
     )}
 </div>
 
-<button type="submit">Submit</button>
+<button type="submit" className='bg-blue-950 rounded-md w-full h-10 mt-3'>Submit</button>
+
+<p className='mt-3 '  >Already Registered?
+    <button className='text-blue-700'
+     type='button' 
+    onClick={()=>navigate('/login')}
+    >
+Login
+    </button>
+
+</p>
 
         </form>
-
+        </div>
 
     </div>
   )
