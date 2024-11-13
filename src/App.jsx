@@ -3,8 +3,10 @@ import Registration from './pages/Registration'
 import './index.css'
 import Login from './pages/Login'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Home from './pages/Home'
+
 import Layout from './pages/Layout'
+import ResourceCreation from './pages/ResourceCreation'
+import Dashboard from './pages/Dashboard'
 function App() {
   
   return (
@@ -12,9 +14,11 @@ function App() {
       <BrowserRouter>
 <Routes>
   <Route path="/" element={<Layout/>}>
-<Route index element={<Home/>} />
+<Route index element={<Login/>} />
 <Route path='registration'  element={<Registration/>}/>
 <Route path='login' element={<Login/>} />
+<Route path='ResourceCreation' element={<ResourceCreation/>}/>
+<Route path='dashboard' element={<Dashboard/>} />
 
   </Route>
 </Routes>
