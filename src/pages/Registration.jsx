@@ -21,7 +21,7 @@ const handleFormSubmit=()=>{
 <div className='justify-center  flex items-center h-screen flex-col ml-96  '>
     <h1 className='font-semibold text-xl'>Registration</h1>
 
-        <form onSubmit={handleSubmit(handleFormSubmit)} className='block border border-gray-500 rounded-md p-4  flex-col  max-h-full w-72 shadow-md bg-white ' >
+<form onSubmit={handleSubmit(handleFormSubmit)} className='block border border-gray-500 rounded-md p-4  flex-col  max-h-full w-72 shadow-md bg-white ' >
 <div className='flex flex-col'>
 <label htmlFor="username">Username</label>
 <input  className='border border-gray-500 px-1 py-1 rounded-md mt-2 mb-2'

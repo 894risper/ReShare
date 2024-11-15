@@ -4,15 +4,22 @@ const Layout = () => {
   return (
     <div className='' >
 <nav  >
-    <ul className='flex flex-row  bg-slate-600 h-10 '>
-        <li className='mt-2 flex-grow text-center'>
-            <Link to="">Home</Link>
+    <ul className=' '>
+        <li className=''>
+            <Link to="login"></Link>
         </li>
         <li className='mt-2 flex-grow text-center'>
-            <Link to="registration">Registration</Link>
+            <Link to="registration"></Link>
         </li>
+        
         <li className='mt-2 flex-grow text-center'>
-            <Link to="login">Login</Link>
+           <Link  to="ResourceCreation"> </Link> 
+        </li>
+        <li>
+            <Link to="dashboard"></Link>
+        </li>
+        <li>
+            <Link to="ViewResources"></Link>
         </li>
     </ul>
 </nav>
