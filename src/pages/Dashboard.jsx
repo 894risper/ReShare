@@ -10,7 +10,8 @@ const navigate = useNavigate();
 
    <button type='button' onClick={()=>navigate('/ResourceCreation')}>Resource Creation
     </button> 
-
+    <button type='button' onClick={()=>navigate('/ViewResources')}>Resource Creation
+    </button>
 
     </div>
   )

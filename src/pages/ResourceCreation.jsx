@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { ResourcesContext } from '../context/ResourcesContext';
 const ResourceCreation = () => {
+    const {addResources} =useContext(ResourcesContext);
+    
 
     const {register,handleSubmit,formState,reset}=useForm();
 
@@ -9,7 +12,9 @@ const ResourceCreation = () => {
         reset({})
     },[reset]);
 
-    const handleFormSubmit=()=>{
+    const handleFormSubmit=(data)=>{
+
+        addResources(data.file,data.title,data.description,data.subject,data.tags,data.privacy)
         reset();
     }
   return (
@@ -30,12 +35,12 @@ const ResourceCreation = () => {
 
 </div>
 <div>
-    <label htmlFor="tittle">Tittle</label>
+    <label htmlFor="title">Title</label>
     <input 
     
     type="text"
-    placeholder='tittle'
-    {...register("tittle",{
+    placeholder='title'
+    {...register("title",{
         required:"the tittle is required",
         pattern:{
             value:/^[a-zA-Z]+$/,
@@ -43,9 +48,9 @@ const ResourceCreation = () => {
         }
     })}
     />
-    {formState.errors.tittle &&(
+    {formState.errors.title &&(
         <p>
-            {formState.errors.tittle.message}
+            {formState.errors.title.message}
         </p>
     )}
 </div>
@@ -101,11 +106,20 @@ placeholder='description'
 </div>
 <div>
     <label htmlFor="privacy">Privacy</label>
-    <select name="" id="">
+    <select name="" id=""
+{...register("privacy",{
+    required:"plz select the privacy"
+})}
+    >
         
         <option value="public">Public</option>
         <option value="private">Private</option>
     </select>
+    {formState.errors.privacy &&(
+        <p>
+            {formState.privacy.errors.message}
+        </p>
+    )}
 </div>
 
 

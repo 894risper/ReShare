@@ -18,6 +18,9 @@ const Layout = () => {
         <li>
             <Link to="dashboard"></Link>
         </li>
+        <li>
+            <Link to="ViewResources"></Link>
+        </li>
     </ul>
 </nav>
 <Outlet/>

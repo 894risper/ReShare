@@ -7,10 +7,13 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Layout from './pages/Layout'
 import ResourceCreation from './pages/ResourceCreation'
 import Dashboard from './pages/Dashboard'
+import { ResourcesProvider } from './context/ResourcesContext'
+import ViewResources from './pages/ViewResources'
 function App() {
   
   return (
     <>
+    <ResourcesProvider>
       <BrowserRouter>
 <Routes>
   <Route path="/" element={<Layout/>}>
@@ -19,12 +22,13 @@ function App() {
 <Route path='login' element={<Login/>} />
 <Route path='ResourceCreation' element={<ResourceCreation/>}/>
 <Route path='dashboard' element={<Dashboard/>} />
+<Route path='ViewResources' element={<ViewResources/>}/>
 
   </Route>
 </Routes>
 
       </BrowserRouter>
-     
+      </ResourcesProvider>
     </>
   )
 }
