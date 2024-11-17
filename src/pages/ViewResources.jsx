@@ -1,9 +1,11 @@
 import React from 'react'
 import { useContext } from 'react'
 import { ResourcesContext } from '../context/ResourcesContext'
+import { FaTrash } from 'react-icons/fa'
+
 
 const ViewResources = () => {
-const {resources}= useContext(ResourcesContext)
+const {resources ,deleteResource}= useContext(ResourcesContext)
 
   return (
     <div>
@@ -17,6 +19,8 @@ const {resources}= useContext(ResourcesContext)
               <th>Category</th>
               <th>Tags</th>
               <th>Privacy</th>
+              <th>Delete</th>
+              <th>Edit</th>
             </tr>
           </thead>
 <tbody>
@@ -28,6 +32,12 @@ const {resources}= useContext(ResourcesContext)
 <td>{resources.subject}</td>
 <td>{resources.tags}</td>
 <td>{resources.privacy}</td>
+<td>
+  <button onClick={()=> deleteResource (index)}>
+    <FaTrash/>
+  </button>
+</td>
+
   </tr>
 ))}
 </tbody>
