@@ -9,6 +9,7 @@ import ResourceCreation from './pages/ResourceCreation'
 import Dashboard from './pages/Dashboard'
 import { ResourcesProvider } from './context/ResourcesContext'
 import ViewResources from './pages/ViewResources'
+import EditResource from './pages/EditResource'
 function App() {
   
   return (
@@ -23,6 +24,7 @@ function App() {
 <Route path='ResourceCreation' element={<ResourceCreation/>}/>
 <Route path='dashboard' element={<Dashboard/>} />
 <Route path='ViewResources' element={<ViewResources/>}/>
+<Route  path='edit' element={<EditResource/>}/>
 
   </Route>
 </Routes>

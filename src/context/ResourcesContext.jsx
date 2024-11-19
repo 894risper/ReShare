@@ -9,9 +9,18 @@ const ResourcesProvider = ({ children }) => {
   const addResources = (file,title,description,subject,tags,privacy) => {
     setResources((prevResources) => [...prevResources, {file,title,description,subject,tags,privacy}]);
   };
+const  deleteResource =(index)=>{
+  setResources((prevResources)=> prevResources.filter((_,i)=>i !==index))
+}
+  
+  const editResource =(index,updatedResources)=>{
+    setResources((prevResources)=>
+      prevResources.map((resources,i)=>(i == index  ? updatedResources : resources))
+  )
+  }
 
   return (
-    <ResourcesContext.Provider value={{ resources, addResources }}>
+    <ResourcesContext.Provider value={{ resources, addResources ,editResource,deleteResource}}>
       {children}
     </ResourcesContext.Provider>
   );

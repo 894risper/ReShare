@@ -1,10 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
 import { ResourcesContext } from '../context/ResourcesContext'
+import { FaTrash ,FaEdit} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const ViewResources = () => {
-const {resources}= useContext(ResourcesContext)
-
+const {resources ,deleteResource}= useContext(ResourcesContext)
+const navigate= useNavigate();
   return (
     <div>
       {resources.length > 0 ?(
@@ -17,6 +19,8 @@ const {resources}= useContext(ResourcesContext)
               <th>Category</th>
               <th>Tags</th>
               <th>Privacy</th>
+              <th>Delete</th>
+              <th>Edit</th>
             </tr>
           </thead>
 <tbody>
@@ -28,6 +32,17 @@ const {resources}= useContext(ResourcesContext)
 <td>{resources.subject}</td>
 <td>{resources.tags}</td>
 <td>{resources.privacy}</td>
+<td>
+  <button onClick={()=> deleteResource (index)}>
+    <FaTrash/>
+  </button>
+</td>
+<td>
+  <button onClick={()=>navigate('/edit',{state :{index}})}>
+    <FaEdit/>
+  </button>
+</td>
+
   </tr>
 ))}
 </tbody>
