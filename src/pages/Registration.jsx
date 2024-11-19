@@ -16,9 +16,10 @@ const handleFormSubmit=()=>{
 }
 
   return (
-    <div className='flex flex-row h-screen bg-blue-100 md:flex-row' >
-<img src="src\assets\splash.png" alt="" className='h-screen ' />
-<div className='justify-center  flex items-center h-screen flex-col ml-96  '>
+    <div className='flex flex-row h-screen bg-blue-100 ' >
+<img src="src\assets\splash.png" alt="" className='h-screen sm:w-50 ' />
+<div className='justify-center flex items-center h-screen flex-col ml-4 md:ml-15 lg:ml-60'>
+
     <h1 className='font-semibold text-xl'>Registration</h1>
 
 <form onSubmit={handleSubmit(handleFormSubmit)} className='block border border-gray-500 rounded-md p-4  flex-col  max-h-full w-72 shadow-md bg-white ' >
