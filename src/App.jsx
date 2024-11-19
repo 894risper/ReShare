@@ -10,6 +10,8 @@ import Dashboard from './pages/Dashboard'
 import { ResourcesProvider } from './context/ResourcesContext'
 import ViewResources from './pages/ViewResources'
 import EditResource from './pages/EditResource'
+import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
 function App() {
   
   return (
@@ -18,13 +20,14 @@ function App() {
       <BrowserRouter>
 <Routes>
   <Route path="/" element={<Layout/>}>
-<Route index element={<Login/>} />
+<Route  path="home" index element={<Home/>} />
 <Route path='registration'  element={<Registration/>}/>
 <Route path='login' element={<Login/>} />
 <Route path='ResourceCreation' element={<ResourceCreation/>}/>
 <Route path='dashboard' element={<Dashboard/>} />
 <Route path='ViewResources' element={<ViewResources/>}/>
 <Route  path='edit' element={<EditResource/>}/>
+<Route path='about' element={<AboutUs/>} />
 
   </Route>
 </Routes>

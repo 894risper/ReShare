@@ -19,9 +19,9 @@ const Login = () => {
   return (
     <div  className='flex flex-row bg-blue-100'>
        <img src="src/assets/splash.png" alt="" className='h-screen' />
-       <div className='flex items-center justify-center flex-col ml-96'> 
+       <div className='flex items-center justify-center flex-col ml-4 lg:ml-60'> 
         <h1 className='font-semibold'>Login</h1>
-<form  className='border border-gray-500 rounded-md h-72 flex flex-col bg-white shadow-md p-4 w-72 '
+<form  className='border border-gray-500 rounded-md max-h-full flex flex-col bg-white shadow-md p-4 w-72 '
 
 onSubmit={handleSubmit(handleFormSubmit)}>
 <div>

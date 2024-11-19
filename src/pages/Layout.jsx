@@ -3,13 +3,21 @@ import { Link,Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <div className='' >
-<nav  >
-    <ul className=' '>
-        <li className=''>
-            <Link to="login"></Link>
+       
+<nav className='   bg-slate-400 h-10 px-1 py-2 p-2' >
+    <ul className='flex flex-row  '>
+        
+        <li className='flex flex-grow text-center'>
+            <Link to="home">Home</Link>
         </li>
-        <li className='mt-2 flex-grow text-center'>
-            <Link to="registration"></Link>
+        <li className='flex flex-grow text-center'>
+            <Link to="login">Login</Link>
+        </li>
+        <li className='flex flex-grow text-center'>
+            <Link to="registration">Registration</Link>
+        </li>
+        <li className='flex flex-grow text-center'>
+            <Link to="about">About</Link>
         </li>
         
         <li className='mt-2 flex-grow text-center'>
@@ -24,6 +32,7 @@ const Layout = () => {
         <li>
             <Link to="edit"></Link>
         </li>
+        
     </ul>
 </nav>
 <Outlet/>

@@ -6,12 +6,17 @@ const navigate = useNavigate();
 
 
   return (
-    <div>
-
+    <div className='flex flex-row'>
+<div className=''>
    <button type='button' onClick={()=>navigate('/ResourceCreation')}>Resource Creation
     </button> 
-    <button type='button' onClick={()=>navigate('/ViewResources')}>Resource Creation
+    <button type='button' onClick={()=>navigate('/ViewResources')}>view Resources
+
     </button>
+    </div>
+    <div>
+      <img src="src/assets/picture.jpg " alt="" />
+    </div>
 
     </div>
   )
