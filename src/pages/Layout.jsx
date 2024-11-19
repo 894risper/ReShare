@@ -21,6 +21,9 @@ const Layout = () => {
         <li>
             <Link to="ViewResources"></Link>
         </li>
+        <li>
+            <Link to="edit"></Link>
+        </li>
     </ul>
 </nav>
 <Outlet/>

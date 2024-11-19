@@ -1,12 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
 import { ResourcesContext } from '../context/ResourcesContext'
-import { FaTrash } from 'react-icons/fa'
-
+import { FaTrash ,FaEdit} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const ViewResources = () => {
 const {resources ,deleteResource}= useContext(ResourcesContext)
-
+const navigate= useNavigate();
   return (
     <div>
       {resources.length > 0 ?(
@@ -35,6 +35,11 @@ const {resources ,deleteResource}= useContext(ResourcesContext)
 <td>
   <button onClick={()=> deleteResource (index)}>
     <FaTrash/>
+  </button>
+</td>
+<td>
+  <button onClick={()=>navigate('/edit',{state :{index}})}>
+    <FaEdit/>
   </button>
 </td>
 
