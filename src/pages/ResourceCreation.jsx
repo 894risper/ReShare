@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { PRIVACY } from '../constants';
 import { ResourcesContext } from '../context/ResourcesContext';
 const ResourceCreation = () => {
     const {addResources} =useContext(ResourcesContext);
@@ -18,26 +19,35 @@ const ResourceCreation = () => {
         reset();
     }
   return (
-    <div> upload resource
+    <div className='flex justify-center items-center flex-col '> 
+        <h1>Upload Resource</h1>
+
+{/*container for form*/}
+ <div className='border border-gray-400 rounded-md p-2 flex items-center justify-center '  >
+
 <form onSubmit={handleSubmit(handleFormSubmit)}>
-<div>
-<label htmlFor="file">File</label>
-<input type="file"
+<div className='mb-2'>
+
+
+<label className='mb-4' htmlFor="file">File</label>
+<input 
+className='border border-gray-300 rounded-md w-full px-2 py-2'
+type="file"
 {...register("file",{
     required:"you need to upload a file"
 })}
 />
 {formState.errors.file &&(
-    <p>
+    <p className='text-red-600'>
         {formState.errors.file.message}
     </p>
 )}
 
 </div>
-<div>
-    <label htmlFor="title">Title</label>
+<div className=''>
+    <label className='mb-3' htmlFor="title">Title</label>
     <input 
-    
+    className='border border-gray-300 rounded-md w-full h-9'
     type="text"
     placeholder='title'
     {...register("title",{
@@ -49,15 +59,17 @@ const ResourceCreation = () => {
     })}
     />
     {formState.errors.title &&(
-        <p>
+        <p className='text-red-600'>
             {formState.errors.title.message}
         </p>
     )}
 </div>
 
 <div>
-<label htmlFor="description">Description</label>
-<input type="text"
+<label className='mb-3' htmlFor="description">Description</label>
+<input  className='border border-gray-300 rounded-md w-full h-9' 
+type="text"
+
 placeholder='description'
 {...register("description",{
     required:"the description is required"
@@ -106,17 +118,21 @@ placeholder='description'
 </div>
 <div>
     <label htmlFor="privacy">Privacy</label>
-    <select name="" id=""
+    <select name="privacy" id="privacy"
 {...register("privacy",{
     required:"plz select the privacy"
-})}
+    
+})} className='block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md'
     >
+        <option value=""> Select Privacy</option>
+        {PRIVACY.map((privacy)=>(
+         <option value={privacy} key={privacy} className='capitalize'
+         >{privacy}</option>   
+        ))}
         
-        <option value="public">Public</option>
-        <option value="private">Private</option>
     </select>
     {formState.errors.privacy &&(
-        <p>
+        <p className='text-sm text-red-600'>
             {formState.privacy.errors.message}
         </p>
     )}
@@ -126,7 +142,7 @@ placeholder='description'
 
 <button type="submit"> Submit</button>
 </form>
-
+</div>
     </div>
   )
 }
