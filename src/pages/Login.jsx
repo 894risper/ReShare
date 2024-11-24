@@ -17,11 +17,12 @@ const Login = () => {
     }
 
   return (
-    <div  className='flex flex-row bg-blue-100'>
-       <img src="src/assets/splash.png" alt="" className='h-screen' />
-       <div className='flex items-center justify-center flex-col ml-4 lg:ml-60'> 
-        <h1 className='font-semibold'>Login</h1>
-<form  className='border border-gray-500 rounded-md max-h-full flex flex-col bg-white shadow-md p-4 w-72 '
+    <div className='bg-blue-100 min-h-screen flex items-center justify-center'>
+    <div  className='bg-gray-100 flex rounded-xl  shadow-lg max-w-3xl p-5 items-center' >
+       
+       <div className='sm:w-1/2 w-full flex-col items-center'> 
+        <h1 className='font-bold text-2xl mb-4 text-blue-950 '>Login</h1>
+<form  className='border border-gray-500 rounded-md max-h-full flex flex-col bg-white shadow-md p-4 w-full sm:w-72 '
 
 onSubmit={handleSubmit(handleFormSubmit)}>
 <div>
@@ -66,7 +67,7 @@ onSubmit={handleSubmit(handleFormSubmit)}>
         </p>
     )}  
 </div>
-<button className='bg-blue-950 mt-4 rounded-md h-7' type="submit">Submit</button>
+<button className='bg-blue-950 mt-4 rounded-xl h-8 text-white hover:scale-95 duration-100 ' type="submit">Submit</button>
 
 <p className='mt-3 justify-center'  >Not Registered?
     <button className='text-blue-700'
@@ -81,6 +82,11 @@ Register
 </form>
 
 </div>
+
+<div className='w-1/2 sm:block hidden'>
+<img src="src/assets/splash.png" alt="" className='rounded-2xl  '  />
+</div>
+    </div>
     </div>
   )
 }

@@ -1,8 +1,17 @@
 import React from 'react'
-import { Link,Outlet } from 'react-router-dom'
+import { Link,Outlet, useLocation } from 'react-router-dom'
 const Layout = () => {
+
+    const location =useLocation();
+
+   //defining routes  where the navbar should not apply
+   const hideNavbarRoutes=['/dashboard','/edit','/dashboard/ViewResources','/dashboard/ResourceCreation']
+
   return (
     <div className='' >
+{/*render the navbar only if the current route is not in the hideNavbarRoutes */ }
+
+        {!hideNavbarRoutes.includes(location.pathname) &&(
        
 <nav className='   bg-slate-400 h-10 px-1 py-2 p-2' >
     <ul className='flex flex-row  '>
@@ -20,22 +29,13 @@ const Layout = () => {
             <Link to="about">About</Link>
         </li>
         
-        <li className='mt-2 flex-grow text-center'>
-           <Link  to="ResourceCreation"> </Link> 
-        </li>
-        <li>
-            <Link to="dashboard"></Link>
-        </li>
-        <li>
-            <Link to="ViewResources"></Link>
-        </li>
-        <li>
-            <Link to="edit"></Link>
-        </li>
+        
         
     </ul>
 </nav>
+)}
 <Outlet/>
+
     </div>
   )
 }

@@ -16,16 +16,16 @@ const handleFormSubmit=()=>{
 }
 
   return (
-    <div className='flex flex-row h-screen bg-blue-100 ' >
-<img src="src\assets\splash.png" alt="" className='h-screen sm:w-50 ' />
-<div className='justify-center flex items-center h-screen flex-col ml-4 md:ml-15 lg:ml-60'>
+    <div className='flex flex-col sm:flex-row h-screen bg-blue-100 ' >
+<img src="src\assets\splash.png" alt="" className='h-screen  sm:block hidden  object-cover  mr-3 sm:w-1/2 md:w-1/2 lg:w-1/4 ' />
+<div className='justify-center flex items-center h-screen flex-col w-96 p-4  '>
 
-    <h1 className='font-semibold text-xl'>Registration</h1>
-
-<form onSubmit={handleSubmit(handleFormSubmit)} className='block border border-gray-500 rounded-md p-4  flex-col  max-h-full w-72 shadow-md bg-white ' >
-<div className='flex flex-col'>
+    <h1 className='font-semibold text-xl text-blue-950'>Registration</h1>
+    <div className='border border-gray-400 w-full p-4 rounded-md lg:ml-60  '>
+<form onSubmit={handleSubmit(handleFormSubmit)} className=' ' >
+<div className='flex flex-col'> 
 <label htmlFor="username">Username</label>
-<input  className='border border-gray-500 px-1 py-1 rounded-md mt-2 mb-2'
+<input  className='border border-gray-500 px-1 py-1 rounded-md mt-2 mb-2 w-full'
 type="text"
 placeholder='username'
 
@@ -87,7 +87,7 @@ pattern:{
     )}
 </div>
 
-<button type="submit" className='bg-blue-950 rounded-md w-full h-10 mt-3'>Submit</button>
+<button type="submit" className='bg-blue-950 rounded-md w-full h-10 mt-3 text-white hover:scale-90 duration-100'>Submit</button>
 
 <p className='mt-3 '  >Already Registered?
     <button className='text-blue-700'
@@ -101,7 +101,7 @@ Login
 
         </form>
         </div>
-
+        </div>
     </div>
   )
 }

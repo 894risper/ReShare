@@ -23,14 +23,15 @@ function App() {
 <Route  path="home" index element={<Home/>} />
 <Route path='registration'  element={<Registration/>}/>
 <Route path='login' element={<Login/>} />
-<Route path='ResourceCreation' element={<ResourceCreation/>}/>
-<Route path='dashboard' element={<Dashboard/>} />
-<Route path='ViewResources' element={<ViewResources/>}/>
-<Route  path='edit' element={<EditResource/>}/>
 <Route path='about' element={<AboutUs/>} />
 
-  </Route>
-</Routes>
+<Route path='dashboard' element={<Dashboard/>} >
+<Route path='ResourceCreation' element={<ResourceCreation/>}/>
+<Route path='ViewResources' element={<ViewResources/>}/>
+<Route  path='edit' element={<EditResource/>}/>
+
+</Route>
+  </Route></Routes>
 
       </BrowserRouter>
       </ResourcesProvider>
