@@ -92,7 +92,7 @@ placeholder='description'
         message:"the message should only contain letters"
       }
     })}
-    />
+    />f
     {formState.errors.subject &&(
         <p>
             {formState.errors.subject.message}
