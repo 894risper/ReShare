@@ -3,9 +3,9 @@ import { Link, Outlet } from 'react-router-dom'
 const Dashboard = () => {
   
   return (
-    <div  className='flex h-screen'>
+    <div  className='flex h-screen flex-col sm:flex-row'>
        
-<nav className='bg-gray-800 text-white w-44 p-3 flex-shrink-0'>
+<nav className='bg-gray-800 text-white  p-3 flex-shrink-0  sm:w-full w-44 lg:w-44 md:w-32'>
   <ul className=''> 
     <li className='mb-2'>
       <Link to='ResourceCreation'>ResourceCreation</Link>
