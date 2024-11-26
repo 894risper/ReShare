@@ -6,7 +6,7 @@ const ResourceCreation = () => {
     const {addResources} =useContext(ResourcesContext);
     
 
-    const {register,handleSubmit,formState,reset}=useForm();
+    const {register,handleSubmit,formState,reset }=useForm();
 
 
     useEffect(()=>{
@@ -75,7 +75,7 @@ placeholder='description'
     required:"the description is required"
 })}
 />
-{formState.errors.decription &&(
+{formState.errors.description &&(
     <p>
        {formState.errors.description.message} 
     </p>
