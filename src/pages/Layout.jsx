@@ -28,7 +28,9 @@ const Layout = () => {
         <li className='flex flex-grow text-center'>
             <Link to="about">About</Link>
         </li>
-        
+        <li>
+            <Link to="/edit"></Link>
+        </li>
         
         
     </ul>

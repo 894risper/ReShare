@@ -24,11 +24,11 @@ function App() {
 <Route path='registration'  element={<Registration/>}/>
 <Route path='login' element={<Login/>} />
 <Route path='about' element={<AboutUs/>} />
+<Route  path='edit' element={<EditResource/>}/>
 
 <Route path='dashboard' element={<Dashboard/>} >
 <Route path='ResourceCreation' element={<ResourceCreation/>}/>
 <Route path='ViewResources' element={<ViewResources/>}/>
-<Route  path='edit' element={<EditResource/>}/>
 
 </Route>
   </Route></Routes>

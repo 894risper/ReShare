@@ -6,7 +6,7 @@ const ResourceCreation = () => {
     const {addResources} =useContext(ResourcesContext);
     
 
-    const {register,handleSubmit,formState,reset}=useForm();
+    const {register,handleSubmit,formState,reset }=useForm();
 
 
     useEffect(()=>{
@@ -19,11 +19,11 @@ const ResourceCreation = () => {
         reset();
     }
   return (
-    <div className='flex justify-center items-center flex-col '> 
+    <div className='flex justify-center items-center flex-col ml-72 '> 
         <h1>Upload Resource</h1>
 
 {/*container for form*/}
- <div className='border border-gray-400 rounded-md p-2 flex items-center justify-center '  >
+ <div className='border border-gray-400 rounded-md p-2 flex items-center justify-center  '  >
 
 <form onSubmit={handleSubmit(handleFormSubmit)}>
 <div className='mb-2'>
@@ -47,7 +47,7 @@ type="file"
 <div className=''>
     <label className='mb-3' htmlFor="title">Title</label>
     <input 
-    className='border border-gray-300 rounded-md w-full h-9'
+    className='border border-gray-300 rounded-md w-full px-2 py-2'
     type="text"
     placeholder='title'
     {...register("title",{
@@ -67,7 +67,7 @@ type="file"
 
 <div>
 <label className='mb-3' htmlFor="description">Description</label>
-<input  className='border border-gray-300 rounded-md w-full h-9' 
+<input  className='border border-gray-300 rounded-md w-full py-2 px-2' 
 type="text"
 
 placeholder='description'
@@ -75,7 +75,7 @@ placeholder='description'
     required:"the description is required"
 })}
 />
-{formState.errors.decription &&(
+{formState.errors.description &&(
     <p>
        {formState.errors.description.message} 
     </p>
@@ -83,7 +83,9 @@ placeholder='description'
 </div>
 <div>
     <label htmlFor="subject">Category</label>
-    <input type="text"
+    <input 
+    className='block px-2 py-2 border border-gray-300 rounded-md w-full'
+    type="text"
     placeholder='subject'
     {...register("subject",{
       required:"the subject is required"  ,
@@ -92,7 +94,7 @@ placeholder='description'
         message:"the message should only contain letters"
       }
     })}
-    />f
+    />
     {formState.errors.subject &&(
         <p>
             {formState.errors.subject.message}
@@ -101,7 +103,8 @@ placeholder='description'
 </div>
 <div>
     <label htmlFor="tags">Tags</label>
-    <input type="text" 
+    <input className='block border border-gray-300 w-full  rounded-md px-2 py-2'
+     type="text" 
     placeholder='tags'
     {...register("tags",{
         pattern:{
@@ -140,7 +143,7 @@ placeholder='description'
 
 
 
-<button type="submit"> Submit</button>
+<button type="submit" className='bg-blue-950 w-full rounded-md h-8 mt-4 hover:scale-95 duration-100 text-white'> Submit</button>
 </form>
 </div>
     </div>
