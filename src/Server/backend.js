@@ -1,6 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-import mysql from 'mysql';
+import mysql from 'mysql2';
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
